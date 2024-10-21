@@ -21,43 +21,66 @@ int main() {
     */
 
     //Синусы и косинусы
-    double angle_in_degree = B[0] + (B[1]/60.0);
-    double angle_in_rad = angle_in_degree * M_PI/180.0;
-    double L_ang_in_deg = L[0] + (L[1]/60.0);
-    double L_ang_in_rad = L_ang_in_deg * M_PI/180.0;
-    long double sin_b = sin(angle_in_rad);
-    long double cos_b = cos(angle_in_rad);
-    long double sin_l = sin(L_ang_in_rad);
-    long double cos_l = cos(L_ang_in_rad);
+    double angle_in_degree_2 = B_2[0] + (B_2[1]/60.0);
+    double angle_in_rad_2 = angle_in_degree_2 * M_PI/180.0;
+    double L_ang_in_deg_2 = L_2[0] + (L_2[1]/60.0);
+    double L_ang_in_rad_2 = L_ang_in_deg_2 * M_PI/180.0;
+    long double sin_b_2 = sin(angle_in_rad_2);
+    long double cos_b_2 = cos(angle_in_rad_2);
+    long double sin_l_2 = sin(L_ang_in_rad_2);
+    long double cos_l_2 = cos(L_ang_in_rad_2);
 
 
     //Коэффиценты m
     long double m_0_jgd2000 = jgd2000.semi_major_axis*(1 - e_1_jgd2000);
-    long double m_2_jgd2000 = (3/2)*e_1_jgd2000*m_0_jgd2000;
-    long double m_4_jgd2000 = (5/4)*e_1_jgd2000*m_2_jgd2000;
-    long double m_6_jgd2000 = (7/6)*e_1_jgd2000*m_4_jgd2000;
+    long double m_2_jgd2000 = (3.0/2.0)*e_1_jgd2000*m_0_jgd2000;
+    long double m_4_jgd2000 = (5.0/4.0)*e_1_jgd2000*m_2_jgd2000;
+    long double m_6_jgd2000 = (7.0/6.0)*e_1_jgd2000*m_4_jgd2000;
     long double m_0_krosvskogo = krosvskogo.semi_major_axis*(1 - e_1_krosvskogo);
-    long double m_2_krosvskogo = (3/2)*e_1_krosvskogo*m_0_krosvskogo;
-    long double m_4_krosvskogo = (5/4)*e_1_krosvskogo*m_2_krosvskogo;
-    long double m_6_krosvskogo = (7/6)*e_1_krosvskogo*m_4_krosvskogo;
+    long double m_2_krosvskogo = (3.0/2.0)*e_1_krosvskogo*m_0_krosvskogo;
+    long double m_4_krosvskogo = (5.0/4.0)*e_1_krosvskogo*m_2_krosvskogo;
+    long double m_6_krosvskogo = (7.0/6.0)*e_1_krosvskogo*m_4_krosvskogo;
 
     //Коэффициенты a
-    long double a_0_jgd2000 = m_0_jgd2000 + (m_2_jgd2000/2) + (3/8)*m_4_jgd2000;
-    long double a_2_jgd2000 = (m_2_jgd2000/2) + (m_4_jgd2000/2) + (15/32)*m_6_jgd2000;
-    long double a_4_jgd2000 = (m_4_jgd2000/8) + (3/16)*m_6_jgd2000;
-    long double a_6_jgd2000 = (m_6_jgd2000/32);
-    long double a_0_krosvskogo = m_0_krosvskogo + (m_2_krosvskogo/2) + (3/8)*m_4_krosvskogo;
-    long double a_2_krosvskogo = (m_2_krosvskogo/2) + (m_4_krosvskogo/2) + (15/32)*m_6_krosvskogo;
-    long double a_4_krosvskogo = (m_4_krosvskogo/8) + (3/16)*m_6_krosvskogo;
-    long double a_6_krosvskogo = (m_6_krosvskogo/32);
+    long double a_0_jgd2000 = m_0_jgd2000 + (m_2_jgd2000/2) + (3.0/8.0)*m_4_jgd2000;
+    long double a_2_jgd2000 = (m_2_jgd2000/2.0) + (m_4_jgd2000/2.0) + (15.0/32.0)*m_6_jgd2000;
+    long double a_4_jgd2000 = (m_4_jgd2000/8.0) + (3.0/16.0)*m_6_jgd2000;
+    long double a_6_jgd2000 = (m_6_jgd2000/32.0);
+    long double a_0_krosvskogo = m_0_krosvskogo + (m_2_krosvskogo/2.0) + (3.0/8.0)*m_4_krosvskogo;
+    long double a_2_krosvskogo = (m_2_krosvskogo/2.0) + (m_4_krosvskogo/2.0) + (15.0/32.0)*m_6_krosvskogo;
+    long double a_4_krosvskogo = (m_4_krosvskogo/8.0) + (3.0/16.0)*m_6_krosvskogo;
+    long double a_6_krosvskogo = (m_6_krosvskogo/32.0);
 
     //X
-    long double X_1_jgd2000 = a_0_jgd2000*B_sec- (a_2_jgd2000/2)*sin(B_sec)*2 + (a_4_jgd2000/4)*sin(B_sec)*4 - (a_6_jgd2000/6)*sin(B_sec)*6;
-    long double X_2_jgd2000 = a_0_jgd2000*B_2_sec- (a_2_jgd2000/2)*sin(B_2_sec)*2 + (a_4_jgd2000/4)*sin(B_2_sec)*4 - (a_6_jgd2000/6)*sin(B_2_sec)*6;
+
+    long double X_1_jgd2000 = a_0_jgd2000 * angle_in_rad 
+        - (a_2_jgd2000 / 2) * sin(2 * angle_in_rad) 
+        + (a_4_jgd2000 / 4) * sin(4 * angle_in_rad) 
+        - (a_6_jgd2000 / 6) * sin(6 * angle_in_rad);
+
+    long double X_2_jgd2000 = a_0_jgd2000 * angle_in_rad_2 
+        - (a_2_jgd2000 / 2) * sin(2 * angle_in_rad_2) 
+        + (a_4_jgd2000 / 4) * sin(4 * angle_in_rad_2) 
+        - (a_6_jgd2000 / 6) * sin(6 * angle_in_rad_2);
+
+    long double X_1_krosvskogo = a_0_krosvskogo * angle_in_rad 
+        - (a_2_krosvskogo / 2) * sin(2 * angle_in_rad) 
+        + (a_4_krosvskogo / 4) * sin(4 * angle_in_rad) 
+        - (a_6_krosvskogo / 6) * sin(6 * angle_in_rad);
+
+    long double X_2_krosvskogo = a_0_krosvskogo * angle_in_rad_2 
+        - (a_2_krosvskogo / 2) * sin(2 * angle_in_rad_2) 
+        + (a_4_krosvskogo / 4) * sin(4 * angle_in_rad_2) 
+        - (a_6_krosvskogo / 6) * sin(6 * angle_in_rad_2);
+
+    //long double X_1_jgd2000 = a_0_jgd2000*angle_in_rad- (a_2_jgd2000/2)*sin_b*2 + (a_4_jgd2000/4)*sin_b*4 - (a_6_jgd2000/6)*sin_b*6;
+    //long double X_2_jgd2000 = a_0_jgd2000*angle_in_rad_2- (a_2_jgd2000/2)*sin_b_2*2 + (a_4_jgd2000/4)*sin_b_2*4 - (a_6_jgd2000/6)*sin_b_2*6;
     long double delta_X_jgd2000 = X_2_jgd2000 - X_1_jgd2000;
-    long double X_1_krosvskogo = a_0_krosvskogo*B_sec- (a_2_krosvskogo/2)*sin(B_sec)*2 + (a_4_krosvskogo/4)*sin(B_sec)*4 - (a_6_krosvskogo/6)*sin(B_sec)*6;
-    long double X_2_krosvskogo = a_0_krosvskogo*B_2_sec- (a_2_krosvskogo/2)*sin(B_2_sec)*2 + (a_4_krosvskogo/4)*sin(B_2_sec)*4 - (a_6_krosvskogo/6)*sin(B_2_sec)*6;
+    //long double X_1_krosvskogo = a_0_krosvskogo*angle_in_rad - (a_2_krosvskogo/2)*sin_b*2 + (a_4_krosvskogo/4)*sin_b*4 - (a_6_krosvskogo/6)*sin_b*6;
+    //long double X_2_krosvskogo = a_0_krosvskogo*angle_in_rad_2- (a_2_krosvskogo/2)*sin_b_2*2 + (a_4_krosvskogo/4)*sin_b_2*4 - (a_6_krosvskogo/6)*sin_b_2*6;
     long double delta_X_krosvskogo = X_2_krosvskogo - X_1_krosvskogo;
+
+
 
     cout << fixed << setprecision(4) << delta_X_jgd2000 << endl;
     cout << fixed << setprecision(4) << delta_X_krosvskogo << endl;
