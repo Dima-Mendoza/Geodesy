@@ -41,6 +41,11 @@ int main() {
     long double m_4_krosvskogo = (5.0/4.0)*e_1_krosvskogo*m_2_krosvskogo;
     long double m_6_krosvskogo = (7.0/6.0)*e_1_krosvskogo*m_4_krosvskogo;
 
+    long double m_0_wgs84 = wgs84.semi_major_axis*(1 - e_1_wgs84);
+    long double m_2_wgs84 = (3.0/2.0)*e_1_wgs84*m_0_wgs84;
+    long double m_4_wgs84 = (5.0/4.0)*e_1_wgs84*m_2_wgs84;
+    long double m_6_wgs84 = (7.0/6.0)*e_1_wgs84*m_4_wgs84;
+
     //Коэффициенты a
     long double a_0_jgd2000 = m_0_jgd2000 + (m_2_jgd2000/2) + (3.0/8.0)*m_4_jgd2000;
     long double a_2_jgd2000 = (m_2_jgd2000/2.0) + (m_4_jgd2000/2.0) + (15.0/32.0)*m_6_jgd2000;
