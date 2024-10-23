@@ -261,6 +261,7 @@ int main() {
     long double rm_P_2_jgd2000 = rm_P_1_jgd2000 / 60.0 * 1000;
     long double rm_P_3_jgd2000 = delta_Y_1_jgd2000 / 60.0;
 
+/*
     cout << fixed << setprecision(3) << sr_M_1_krosvskogo << " : " << sr_M_1_jgd2000 << " : " << sr_M_1_gsk2011
         << " : " << sr_M_1_pz90 << " : " << sr_M_1_wgs84 << endl;
     
@@ -277,33 +278,41 @@ int main() {
         << sr_M_3_gsk2011 << " : " 
         << sr_M_3_pz90 << " : " 
         << sr_M_3_wgs84 << endl;
+*/
 
+//      ЗАПИСЬ ДАННЫХ В ЭКСЕЛЬ
 
-
-
-
-
-
-
-
-    // krosvskogo wgs84 pz90 gsk2011 jgd2000
-
-
-
-
-
-
-/*
     lxw_workbook *workbook = workbook_new("out.xlsx");
     lxw_worksheet *worksheet = workbook_add_worksheet(workbook, NULL);
     //lxw_format *format = workbook.add_format({'num_format': '#,##0.00'};
-    lxw_format *format = workbook_add_format(workbook);
-    format_set_num_format(format, "0.0000000000");
+    lxw_format *format05 = workbook_add_format(workbook);
+    lxw_format *format04 = workbook_add_format(workbook);
+    lxw_format *format02 = workbook_add_format(workbook);
+    lxw_format *format03 = workbook_add_format(workbook);
 
-    worksheet_write_string(worksheet,0,0,"Hello",format);
-    worksheet_write_number(worksheet,0,1,v_krosvskogo,format);
+    format_set_num_format(format05, "0.00000");
+    format_set_num_format(format04, "0.0000");
+    format_set_num_format(format03, "0.000");
+    format_set_num_format(format02, "0.00");
+
+    //Table 1
+
+    worksheet_write_string(worksheet,0,1,"Красовского",NULL);
+    worksheet_write_string(worksheet,0,2,"JGD2000",NULL);
+    worksheet_write_string(worksheet,0,3,"GSK2011",NULL);
+    worksheet_write_string(worksheet,0,4,"PZ90",NULL);
+    worksheet_write_string(worksheet,0,5,"WGS84",NULL);
+
+    worksheet_write_string(worksheet,1,0,"a0",NULL);
+
+
+    worksheet_write_number(worksheet,1,1,a_0_krosvskogo,format05);
+    worksheet_write_number(worksheet,1,2,a_0_jgd2000,format05);
+    worksheet_write_number(worksheet,1,3,a_0_gsk2011,format05);
+    worksheet_write_number(worksheet,1,4,a_0_pz90,format05);
+    worksheet_write_number(worksheet,1,5,a_0_wgs84,format05);
 
     workbook_close(workbook);
-*/
+
     return 0;
 }
