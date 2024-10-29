@@ -185,15 +185,15 @@ int main() {
 
     long double rm_P_1_krosvskogo = delta_Y_1_krosvskogo / 2.0 / 1000.0;
     long double rm_P_2_krosvskogo = rm_P_1_krosvskogo / 60.0 * 1000;
-    long double rm_P_3_krosvskogo = delta_Y_1_krosvskogo / 60.0;
+    long double rm_P_3_krosvskogo = rm_P_2_krosvskogo / 60.0;
 
     long double sr_M_1_wgs84 = delta_X_wgs84_2 / 2.0 / 1000.0;
-    long double sr_M_2_wgs84 = sr_M_1_wgs84 / 60.0 * 1000;
+    long double sr_M_2_wgs84 = sr_M_1_wgs84 / 60.0 * 1000; 
     long double sr_M_3_wgs84 = sr_M_2_wgs84 / 60.0;
 
     long double rm_P_1_wgs84 = delta_Y_1_wgs84 / 2.0 / 1000.0;
     long double rm_P_2_wgs84 = rm_P_1_wgs84 / 60.0 * 1000;
-    long double rm_P_3_wgs84 = delta_Y_1_wgs84 / 60.0;
+    long double rm_P_3_wgs84 = rm_P_2_wgs84 / 60.0;
 
     long double sr_M_1_pz90 = delta_X_pz90_2 / 2.0 / 1000.0;
     long double sr_M_2_pz90 = sr_M_1_pz90 / 60.0 * 1000;
@@ -201,7 +201,7 @@ int main() {
 
     long double rm_P_1_pz90 = delta_Y_1_pz90 / 2.0 / 1000.0;
     long double rm_P_2_pz90 = rm_P_1_pz90 / 60.0 * 1000;
-    long double rm_P_3_pz90 = delta_Y_1_pz90 / 60.0;
+    long double rm_P_3_pz90 = rm_P_2_pz90 / 60.0;
 
     long double sr_M_1_gsk2011 = delta_X_gsk2011_2 / 2.0 / 1000.0;
     long double sr_M_2_gsk2011 = sr_M_1_gsk2011 / 60.0 * 1000;
@@ -209,7 +209,7 @@ int main() {
 
     long double rm_P_1_gsk2011 = delta_Y_1_gsk2011 / 2.0 / 1000.0;
     long double rm_P_2_gsk2011 = rm_P_1_gsk2011 / 60.0 * 1000;
-    long double rm_P_3_gsk2011 = delta_Y_1_gsk2011 / 60.0;
+    long double rm_P_3_gsk2011 = rm_P_2_gsk2011 / 60.0;
 
     long double sr_M_1_jgd2000 = delta_X_jgd2000_2 / 2.0 / 1000.0;
     long double sr_M_2_jgd2000 = sr_M_1_jgd2000 / 60.0 * 1000;
@@ -217,7 +217,7 @@ int main() {
 
     long double rm_P_1_jgd2000 = delta_Y_1_jgd2000 / 2.0 / 1000.0;
     long double rm_P_2_jgd2000 = rm_P_1_jgd2000 / 60.0 * 1000;
-    long double rm_P_3_jgd2000 = delta_Y_1_jgd2000 / 60.0;
+    long double rm_P_3_jgd2000 = rm_P_2_jgd2000 / 60.0;
 
 //      ЗАПИСЬ ДАННЫХ В ЭКСЕЛЬ
 
