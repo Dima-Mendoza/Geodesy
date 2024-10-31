@@ -3,6 +3,8 @@
 #include <xlsxwriter.h>
 #include "geo_three_h.h"
 
+namespace GeoF {
+
     long double B_1[3] = {50, 36, 0};
     long double B_2[3] = {50, 46, 0};
 
@@ -146,3 +148,4 @@ long double X_2_gsk2011 = (a_0_gsk2011 * angle_in_rad_2
     long double P_pz90 = pow(b_pz90, 2) * delta_L * (sin_b_2 - sin_b_1 + I_pz90 + II_pz90 + III_pz90)/ 1000000.0;
     long double P_jgd2000 = pow(b_jgd2000, 2) * delta_L * (sin_b_2 - sin_b_1 + I_jgd2000 + II_jgd2000 + III_jgd2000)/ 1000000.0;
     long double P_gsk2011 = pow(b_gsk2011, 2) * delta_L * (sin_b_2 - sin_b_1 + I_gsk2011 + II_gsk2011 + III_gsk2011)/ 1000000.0;
+}
