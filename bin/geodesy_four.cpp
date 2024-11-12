@@ -17,14 +17,12 @@ void decimalToDMS(long double degree, int &deg, int &min, long double &sec) {
 
     sec = frac * 60;
 
-    // Корректировка секунд
     if (sec >= 60.0) {
         int extra_minutes = static_cast<int>(sec / 60);
         sec -= extra_minutes * 60;
         min += extra_minutes;
     }
 
-    // Корректировка минут
     if (min >= 60) {
         int extra_degrees = min / 60;
         min -= extra_degrees * 60;
