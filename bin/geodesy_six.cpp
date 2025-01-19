@@ -5,7 +5,7 @@
 #include "geo_two_h.h"
 
 int main() {
-    lxw_workbook *workbook = workbook_new("out2342.xlsx");
+    lxw_workbook *workbook = workbook_new("geo_6.xlsx");
     lxw_worksheet *worksheet = workbook_add_worksheet(workbook, "sh6");
     lxw_format *format03 = workbook_add_format(workbook);
     lxw_format *format09 = workbook_add_format(workbook);
@@ -217,7 +217,7 @@ worksheet_write_string(worksheet, 98, 0, "ℓ", NULL);
 worksheet_write_string(worksheet, 99, 0, "B", NULL);
 worksheet_write_string(worksheet, 100, 0, "L", NULL);
 
-    
+
 
 
 
